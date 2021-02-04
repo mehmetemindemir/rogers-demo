@@ -67,7 +67,7 @@ public class StudentControllerTest {
     @Test
     public void deleteStudent() throws Exception{
       RequestBuilder requestBuilder= MockMvcRequestBuilders
-              .delete("/student/remove/1");
+              .delete("/student/remove/3");
       mvc.perform(requestBuilder).andDo(print())
               .andExpect(status().isOk());
 

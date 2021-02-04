@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(value = HttpStatus.BAD_REQUEST)
 public class StudentNullException extends RuntimeException{
-    public StudentNullException(){
-        super("Student can not be null");
+    public StudentNullException(String msg){
+        super(msg);
     }
 }
