@@ -4,8 +4,8 @@ echo "2-)prod"
 read result
 if [ "$result" == "dev" ]; then
   mvn clean install -U
-  docker build . -t dhub.mehmetemindemir.com/med/rogersdemo-api:T001
-  docker push dhub.mehmetemindemir.com/med/rogersdemo-api:T001
+  docker build . -t dhub.mehmetemindemir.com/med/rogersdemo-api:T003
+  docker push dhub.mehmetemindemir.com/med/rogersdemo-api:T003
 
 elif [ "$result" == "prod" ]; then
   mvn clean install -U

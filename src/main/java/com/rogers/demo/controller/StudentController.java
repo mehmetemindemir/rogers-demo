@@ -29,14 +29,7 @@ public class StudentController {
     })
     @GetMapping({"students/list"})
     public List<Student> getStudentList(){
-        List<Student> students=null;
-        try {
-            students=studentService.getStudentList();
-
-        }catch (Exception e){
-            throw e;
-        }
-        return students;
+        return studentService.getStudentList();
     }
 
     @ApiOperation(value = "Insert an student",response = Student.class)
@@ -48,14 +41,10 @@ public class StudentController {
     })
     @PostMapping({"student/add"})
     public Student addStudent(@RequestBody Student student){
-        try {
-            if(null==student || null==student.getName()){
-                throw new StudentNullException();
-            }
-            studentService.addNewStudent(student);
-        }catch (Exception e){
-            throw e;
+        if(null==student || null==student.getName()){
+            throw new StudentNullException();
         }
+        studentService.addNewStudent(student);
         return student;
     }
 
